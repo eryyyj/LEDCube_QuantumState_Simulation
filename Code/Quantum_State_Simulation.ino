@@ -1,3 +1,5 @@
+#include <LiquidCrystal_I2C.h>
+#include <Wire.h>
 #define layer1 3
 #define layer2 2
 #define layer3 13
@@ -5,6 +7,8 @@
 #define potX A3
 #define potY A2
 #define potZ A1
+
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 void setup() {
   for (int i = 12; i > 3;i--) {
@@ -22,7 +26,16 @@ void setup() {
   digitalWrite(layer2, HIGH);
   digitalWrite(layer3, HIGH);
 
+  lcd.init();
+
+  lcd.backlight();
+  lcd.setCursor(0, 0);             // Set cursor to the first column, first row
+  lcd.print("Welcome to");    // Print text on the first row
+  lcd.setCursor(0, 1);             // Set cursor to the first column, second row
+  lcd.print("Quantumania!"); 
+  delay(3000);
   Serial.begin(9600);
+  lcd.clear();
 }
 
 void loop() {
@@ -30,9 +43,20 @@ void loop() {
   int yVal = analogRead(potY);
   int zVal = analogRead(potZ);
 
-  int xAngle = map(xVal, 0, 1023, 0, 360);
-  int yAngle = map(yVal, 0, 1023, 0, 360);
-  int zAngle = map(zVal, 0, 1023, 0, 360);
+  int xAngle = map(xVal, 0, 1023, 360, 0);
+  int yAngle = map(yVal, 0, 1023, 360, 0);
+  int zAngle = map(zVal, 0, 1023, 360, 0);
+
+  lcd.clear();
+  lcd.setCursor(0, 0); 
+  lcd.print("X:");
+  lcd.print(xAngle);
+  lcd.print(" Y:");
+  lcd.print(yAngle);
+
+  lcd.setCursor(0, 1);
+  lcd.print(" Z:");
+  lcd.print(zAngle);
 
   float xRadians = radians(xAngle);
   float yRadians = radians(yAngle);
@@ -332,7 +356,7 @@ void loop() {
         const int states[] = {LOW, LOW, HIGH};
         updateCube(pins, 3, layers, states, 3);
       }else if(yAngle == 270){
-        const int pins[] = {8, 11,10};
+        const int pins[] = {8, 11,9};
         const int layers[] = {layer1, layer2, layer3};
         const int states[] = {HIGH, LOW, HIGH};
         updateCube(pins, 3, layers, states, 3);
@@ -387,39 +411,39 @@ void loop() {
     }
   }else if (xAngle == 90 && yAngle == 0) {
     if(zAngle > 0 && zAngle < 90){
-      const int pins[] = {8, 10};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
-      updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle == 90){
       const int pins[] = {8, 7};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {HIGH, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle > 90 && zAngle < 180){
+    }else if(zAngle == 90){
       const int pins[] = {8, 4};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {HIGH, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle == 180){
+    }else if(zAngle > 90 && zAngle < 180){
       const int pins[] = {8, 5};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {HIGH, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle > 180 && zAngle < 270){
+    }else if(zAngle == 180){
       const int pins[] = {8, 6};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {HIGH, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle > 270 && zAngle < 360){
-      const int pins[] = {8, 12};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
-      updateCube(pins, 2, layers, states, 3);
-    }else if(zAngle == 270){
+    }else if(zAngle > 180 && zAngle < 270){
       const int pins[] = {8, 9};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {HIGH, LOW, HIGH};
+      updateCube(pins, 2, layers, states, 3);
+    }else if(zAngle > 270 && zAngle < 360){
+      const int pins[] = {8, 11};
+      const int layers[] = {layer1, layer2, layer3};
+      const int states[] = {HIGH, LOW, HIGH};
+      updateCube(pins, 2, layers, states, 3);
+    }else if(zAngle == 270){
+      const int pins[] = {8, 12};
+      const int layers[] = {layer1, layer2, layer3};
+      const int states[] = {HIGH, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else{
       const int pins[] = {8, 10};
@@ -1191,37 +1215,37 @@ void loop() {
     if(zAngle > 0 && zAngle < 90){
       const int pins[] = {8, 9};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle == 90){
       const int pins[] = {8, 12};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle > 90 && zAngle < 180){
       const int pins[] = {8, 11};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle == 180){
       const int pins[] = {8, 10};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle > 180 && zAngle < 270){
       const int pins[] = {8, 7};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle > 270 && zAngle < 360){
       const int pins[] = {8, 5};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else if(zAngle == 270){
       const int pins[] = {8, 4};
       const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {HIGH, LOW, LOW};
+      const int states[] = {LOW, LOW, HIGH};
       updateCube(pins, 2, layers, states, 3);
     }else{
       const int pins[] = {8, 6};
