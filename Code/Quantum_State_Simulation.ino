@@ -1213,45 +1213,341 @@ void loop() {
     }
   } else if (xAngle > 270 && xAngle < 360) {
     if(zAngle > 0 && zAngle < 90){
-      const int pins[] = {8, 9};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 12,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 12,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 12,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle == 90){
-      const int pins[] = {8, 12};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 9,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 9,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 9,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle > 90 && zAngle < 180){
-      const int pins[] = {8, 11};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 11,12};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,11};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 11};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle == 180){
-      const int pins[] = {8, 10};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 11,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle > 180 && zAngle < 270){
-      const int pins[] = {8, 7};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 7,10};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,7};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 7};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle > 270 && zAngle < 360){
-      const int pins[] = {8, 5};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,5};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 5,6};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 5,6};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 5,6};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 5};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else if(zAngle == 270){
-      const int pins[] = {8, 4};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 7,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){  
+        const int pins[] = {8,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 5,4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 4};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }else{
-      const int pins[] = {8, 6};
-      const int layers[] = {layer1, layer2, layer3};
-      const int states[] = {LOW, LOW, HIGH};
-      updateCube(pins, 2, layers, states, 3);
+      if(yAngle > 0 && yAngle < 90){
+        const int pins[] = {8, 6,5};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 90){
+        const int pins[] = {8, 6,5};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 90 && yAngle < 180){
+        const int pins[] = {8, 6,5};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 180){
+        const int pins[] = {8,6};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }else if(yAngle > 180 && yAngle < 270){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, LOW};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle == 270){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {HIGH, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else if(yAngle > 270 && yAngle < 360){
+        const int pins[] = {8, 6,9};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 3, layers, states, 3);
+      }else{
+        const int pins[] = {8, 6};
+        const int layers[] = {layer1, layer2, layer3};
+        const int states[] = {LOW, LOW, HIGH};
+        updateCube(pins, 2, layers, states, 3);
+      }
     }
   }
 }
